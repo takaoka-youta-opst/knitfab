@@ -2,30 +2,66 @@ apiVersion: v1
 entries:
   knit-app:
   - apiVersion: v2
+    appVersion: v1.1.0-patch-c334736
+    created: "2024-04-11T18:25:06.347313+09:00"
+    description: knitfab application
+    digest: c6e9a9ecb247409ffa573d5b63975dc4fbd97bc7fb6fa08f787472cd0ae65a1a
+    name: knit-app
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/feature/%2348/multiarch-build/charts/release/v1.1.0-patch/knit-app-v1.1.0-patch.tgz
+    version: v1.1.0-patch
+  - apiVersion: v2
     appVersion: v1.0.0-7092c72
-    created: "2024-04-11T16:19:49.287336+09:00"
+    created: "2024-04-11T18:25:06.342646+09:00"
     description: knitfab application
     digest: 0cb63a1df991c1230b5c74260bdb7f42cd6b184df0b1c5647fc4199191bc1157
     name: knit-app
     type: application
     urls:
-    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/main/charts/release/v1.0.0/knit-app-v1.0.0.tgz
+    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/feature/%2348/multiarch-build/charts/release/v1.0.0/knit-app-v1.0.0.tgz
     version: v1.0.0
   knit-certs:
   - apiVersion: v2
+    appVersion: v1.1.0-patch-c334736
+    created: "2024-04-11T18:25:06.348184+09:00"
+    description: certificate management for knitfab
+    digest: d9cc7abd2a854237a21219c459e1e817de7be6c6ec9fcaa92f0976ffb215aa50
+    name: knit-certs
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/feature/%2348/multiarch-build/charts/release/v1.1.0-patch/knit-certs-v1.1.0-patch.tgz
+    version: v1.1.0-patch
+  - apiVersion: v2
     appVersion: v1.0.0-7092c72
-    created: "2024-04-11T16:19:49.28815+09:00"
+    created: "2024-04-11T18:25:06.343284+09:00"
     description: certificate management for knitfab
     digest: e372804c02df5fc4161284ad2269121404081476c97b4db455a6f07c526cbac1
     name: knit-certs
     type: application
     urls:
-    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/main/charts/release/v1.0.0/knit-certs-v1.0.0.tgz
+    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/feature/%2348/multiarch-build/charts/release/v1.0.0/knit-certs-v1.0.0.tgz
     version: v1.0.0
   knit-db-postgres:
   - apiVersion: v2
+    appVersion: v1.1.0-patch-c334736
+    created: "2024-04-11T18:25:06.349389+09:00"
+    description: knitfab database (postgres)
+    digest: c7d6987e074e5617243d4608b282821aedc3b3f6418c13512c6edbf8c114caa2
+    keywords:
+    - knitfab
+    - MLOps
+    - Lineage Tracking
+    - Workflow
+    - Tag Based Workflow
+    name: knit-db-postgres
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/feature/%2348/multiarch-build/charts/release/v1.1.0-patch/knit-db-postgres-v1.1.0-patch.tgz
+    version: v1.1.0-patch
+  - apiVersion: v2
     appVersion: v1.0.0-7092c72
-    created: "2024-04-11T16:19:49.289365+09:00"
+    created: "2024-04-11T18:25:06.343937+09:00"
     description: knitfab database (postgres)
     digest: eb02459e4a08d0b2fd940865665a5807ea080922694607131c2f33553c331c10
     keywords:
@@ -37,12 +73,28 @@ entries:
     name: knit-db-postgres
     type: application
     urls:
-    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/main/charts/release/v1.0.0/knit-db-postgres-v1.0.0.tgz
+    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/feature/%2348/multiarch-build/charts/release/v1.0.0/knit-db-postgres-v1.0.0.tgz
     version: v1.0.0
   knit-image-registry:
   - apiVersion: v2
+    appVersion: v1.1.0-patch-c334736
+    created: "2024-04-11T18:25:06.350253+09:00"
+    description: In-cluster private image registry for knitfab
+    digest: d7aa4a5c18356096f72722ff29ca4538b580bf5ecb278dfd26af0af05ba9a918
+    keywords:
+    - knitfab
+    - MLOps
+    - Lineage Tracking
+    - Workflow
+    - Tag Based
+    name: knit-image-registry
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/feature/%2348/multiarch-build/charts/release/v1.1.0-patch/knit-image-registry-v1.1.0-patch.tgz
+    version: v1.1.0-patch
+  - apiVersion: v2
     appVersion: v1.0.0-7092c72
-    created: "2024-04-11T16:19:49.290231+09:00"
+    created: "2024-04-11T18:25:06.344561+09:00"
     description: In-cluster private image registry for knitfab
     digest: a9530567a75d8d660f0e4e8d8b592ea10594211d05f680b1a12eb1686f6c3e28
     keywords:
@@ -54,12 +106,32 @@ entries:
     name: knit-image-registry
     type: application
     urls:
-    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/main/charts/release/v1.0.0/knit-image-registry-v1.0.0.tgz
+    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/feature/%2348/multiarch-build/charts/release/v1.0.0/knit-image-registry-v1.0.0.tgz
     version: v1.0.0
   knit-storage-nfs:
   - apiVersion: v2
+    appVersion: v1.1.0-patch-c334736
+    created: "2024-04-11T18:25:06.353643+09:00"
+    dependencies:
+    - name: csi-driver-nfs
+      repository: https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
+      version: v4.6.0
+    description: storage classes with nfs provisioner and opt-in in-cluster NFS server
+    digest: 8811752678e5eaa0efc4330d6da5322fd58a55dea7cc4c50d0fadcf6ab81168a
+    keywords:
+    - knitfab
+    - MLOps
+    - Lineage Tracking
+    - Workflow
+    - Tag Based Workflow
+    name: knit-storage-nfs
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/feature/%2348/multiarch-build/charts/release/v1.1.0-patch/knit-storage-nfs-v1.1.0-patch.tgz
+    version: v1.1.0-patch
+  - apiVersion: v2
     appVersion: v1.0.0-7092c72
-    created: "2024-04-11T16:19:49.292626+09:00"
+    created: "2024-04-11T18:25:06.346414+09:00"
     dependencies:
     - name: csi-driver-nfs
       repository: https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
@@ -75,6 +147,6 @@ entries:
     name: knit-storage-nfs
     type: application
     urls:
-    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/main/charts/release/v1.0.0/knit-storage-nfs-v1.0.0.tgz
+    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/feature/%2348/multiarch-build/charts/release/v1.0.0/knit-storage-nfs-v1.0.0.tgz
     version: v1.0.0
-generated: "2024-04-11T16:19:49.285698+09:00"
+generated: "2024-04-11T18:25:06.340942+09:00"
