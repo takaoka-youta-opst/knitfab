@@ -7,123 +7,115 @@ version: "3.4"
 services:
   knit-builder:
     build:
-      context: ../
       dockerfile: ./build/Dockerfile
       target: builder
-    image: "knit-builder:${APP_VERSION}"
+    image: "knit-builder:${APP_VERSION}-${ARCH}"
   knit-dataagt:
     build:
-      context: ../
       dockerfile: ./build/Dockerfile
       target: knit-dataagt
       args:
         - LDFLAGS="-s"
-    image: "knit-dataagt:${APP_VERSION}"
+        - REPOSITORY_PATH=${REPOSITORY_PATH}
+    image: "knit-dataagt:${APP_VERSION}-${ARCH}"
   knit-dataagt-debug:
     build:
-      context: ../
       dockerfile: ./build/Dockerfile
       target: knit-dataagt-debug
       args:
         - GCFLAGS=all="-N -l"
-    image: "knit-dataagt:${APP_VERSION}"
+    image: "knit-dataagt:${APP_VERSION}-${ARCH}"
 
   knit-vex:
     build:
-      context: ../
       dockerfile: ./build/Dockerfile
       target: knit-vex
       args:
         - LDFLAGS="-s"
-    image: "knit-vex:${APP_VERSION}"
+        - REPOSITORY_PATH=${REPOSITORY_PATH}
+    image: "knit-vex:${APP_VERSION}-${ARCH}"
   knit-vex-debug:
     build:
-      context: ../
       dockerfile: ./build/Dockerfile
       target: knit-vex-debug
       args:
         - GCFLAGS=all="-N -l"
-    image: "knit-vex:${APP_VERSION}"
+    image: "knit-vex:${APP_VERSION}-${ARCH}"
 
   knit-empty:
     build:
-      context: ../
       dockerfile: ./build/Dockerfile
       target: knit-empty
       args:
         - LDFLAGS="-s"
-    image: "knit-empty:${APP_VERSION}"
+        - REPOSITORY_PATH=${REPOSITORY_PATH}
+    image: "knit-empty:${APP_VERSION}-${ARCH}"
   knit-empty-debug:
     build:
-      context: ../
       dockerfile: ./build/Dockerfile
       target: knit-empty-debug
       args:
         - GCFLAGS=all="-N -l"
-    image: "knit-empty:${APP_VERSION}"
+    image: "knit-empty:${APP_VERSION}-${ARCH}"
   knit-nurse:
     build:
-      context: ../
       dockerfile: ./build/Dockerfile
       target: knit-nurse
       args:
         - LDFLAGS="-s"
-    image: "knit-nurse:${APP_VERSION}"
+        - REPOSITORY_PATH=${REPOSITORY_PATH}
+    image: "knit-nurse:${APP_VERSION}-${ARCH}"
   knit-nurse-debug:
     build:
-      context: ../
       dockerfile: ./build/Dockerfile
       target: knit-nurse-debug
       args:
         - GCFLAGS=all="-N -l"
-    image: "knit-nurse:${APP_VERSION}"
+    image: "knit-nurse:${APP_VERSION}-${ARCH}"
   knit-loops:
     build:
-      context: ../
       dockerfile: ./build/Dockerfile
       target: knit-loops
       args:
         - LDFLAGS="-s"
-    image: "knit-loops:${APP_VERSION}"
+        - REPOSITORY_PATH=${REPOSITORY_PATH}
+    image: "knit-loops:${APP_VERSION}-${ARCH}"
   knit-loops-debug:
     build:
-      context: ../
       dockerfile: ./build/Dockerfile
       target: knit-loops-debug
       args:
         - GCFLAGS=all="-N -l"
-    image: "knit-loops:${APP_VERSION}"
+    image: "knit-loops:${APP_VERSION}-${ARCH}"
 
   knitd:
     build:
-      context: ../
       dockerfile: ./build/Dockerfile
       target: knitd
       args:
         - LDFLAGS="-s"
-    image: "knitd:${APP_VERSION}"
+        - REPOSITORY_PATH=${REPOSITORY_PATH}
+    image: "knitd:${APP_VERSION}-${ARCH}"
   knitd-debug:
     build:
-      context: ../
       dockerfile: ./build/Dockerfile
       target: knitd-debug
       args:
         - GCFLAGS=all="-N -l"
-    image: "knitd:${APP_VERSION}"
+    image: "knitd:${APP_VERSION}-${ARCH}"
 
   knitd-backend:
     build:
-      context: ../
       dockerfile: ./build/Dockerfile
       target: knitd-backend
       args:
         - LDFLAGS="-s"
-    image: "knitd-backend:${APP_VERSION}"
+        - REPOSITORY_PATH=${REPOSITORY_PATH}
+    image: "knitd-backend:${APP_VERSION}-${ARCH}"
   knitd-backend-debug:
     build:
-      context: ../
       dockerfile: ./build/Dockerfile
       target: knitd-backend-debug
       args:
         - GCFLAGS=all="-N -l"
-    image: "knitd-backend:${APP_VERSION}"
+    image: "knitd-backend:${APP_VERSION}-${ARCH}"
