@@ -152,6 +152,7 @@ for CMD in ${ROOT} ${ROOT}/cmd/* ; do
 	(
 		echo "generating code for ${CMD}..."
 		cd ${CMD}
+		go mod tidy
 		go generate ./...
 	)
 done
