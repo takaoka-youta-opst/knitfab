@@ -2,30 +2,66 @@ apiVersion: v1
 entries:
   knit-app:
   - apiVersion: v2
+    appVersion: v1.0.3-d5ccc0a
+    created: "2024-04-26T18:02:47.478631+09:00"
+    description: knitfab application
+    digest: 4fe5f724c349e79c8ebfaabbb2a6b4f4746b316193258a284bf0d168f96e5e49
+    name: knit-app
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/release-test/v1.0.3/charts/release/v1.0.3/knit-app-v1.0.3.tgz
+    version: v1.0.3
+  - apiVersion: v2
     appVersion: v1.0.0-61101e8
-    created: "2024-04-01T13:20:38.662593+09:00"
+    created: "2024-04-26T18:02:47.47178+09:00"
     description: knitfab application
     digest: 5789a6f6fc63c10b12e855df7c479745a8c8b0f9318643f8605b7a540976af8a
     name: knit-app
     type: application
     urls:
-    - https://raw.githubusercontent.com/opst/knitfab/main/charts/release/v1.0.0/knit-app-v1.0.0.tgz
+    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/release-test/v1.0.3/charts/release/v1.0.0/knit-app-v1.0.0.tgz
     version: v1.0.0
   knit-certs:
   - apiVersion: v2
+    appVersion: v1.0.3-d5ccc0a
+    created: "2024-04-26T18:02:47.479106+09:00"
+    description: certificate management for knitfab
+    digest: 9ed105bba4ca2b9254ed487c0cc9ac070de1e8dc738c0938614f6ebcee6e4bc8
+    name: knit-certs
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/release-test/v1.0.3/charts/release/v1.0.3/knit-certs-v1.0.3.tgz
+    version: v1.0.3
+  - apiVersion: v2
     appVersion: v1.0.0-61101e8
-    created: "2024-04-01T13:20:38.663171+09:00"
+    created: "2024-04-26T18:02:47.472618+09:00"
     description: certificate management for knitfab
     digest: 71b68a0e16571e67927e913db6d4b6c39bb60c1c0d2d34bfd2e3d340322f3a6b
     name: knit-certs
     type: application
     urls:
-    - https://raw.githubusercontent.com/opst/knitfab/main/charts/release/v1.0.0/knit-certs-v1.0.0.tgz
+    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/release-test/v1.0.3/charts/release/v1.0.0/knit-certs-v1.0.0.tgz
     version: v1.0.0
   knit-db-postgres:
   - apiVersion: v2
+    appVersion: v1.0.3-d5ccc0a
+    created: "2024-04-26T18:02:47.479894+09:00"
+    description: knitfab database (postgres)
+    digest: 09e429db32bfc69cdfa6de30dbff115709450e124a4117b60cc48a117ccc0898
+    keywords:
+    - knitfab
+    - MLOps
+    - Lineage Tracking
+    - Workflow
+    - Tag Based Workflow
+    name: knit-db-postgres
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/release-test/v1.0.3/charts/release/v1.0.3/knit-db-postgres-v1.0.3.tgz
+    version: v1.0.3
+  - apiVersion: v2
     appVersion: v1.0.0-61101e8
-    created: "2024-04-01T13:20:38.664025+09:00"
+    created: "2024-04-26T18:02:47.474035+09:00"
     description: knitfab database (postgres)
     digest: f4324219dd815df66cebb6f20ec3cd552d099290a313b834115d99a56fbe40d5
     keywords:
@@ -37,12 +73,28 @@ entries:
     name: knit-db-postgres
     type: application
     urls:
-    - https://raw.githubusercontent.com/opst/knitfab/main/charts/release/v1.0.0/knit-db-postgres-v1.0.0.tgz
+    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/release-test/v1.0.3/charts/release/v1.0.0/knit-db-postgres-v1.0.0.tgz
     version: v1.0.0
   knit-image-registry:
   - apiVersion: v2
+    appVersion: v1.0.3-d5ccc0a
+    created: "2024-04-26T18:02:47.48052+09:00"
+    description: In-cluster private image registry for knitfab
+    digest: e310359090df85da44ec2eb386e30d4c2d5ceaae6912d84dcb606fbcf7c0290c
+    keywords:
+    - knitfab
+    - MLOps
+    - Lineage Tracking
+    - Workflow
+    - Tag Based
+    name: knit-image-registry
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/release-test/v1.0.3/charts/release/v1.0.3/knit-image-registry-v1.0.3.tgz
+    version: v1.0.3
+  - apiVersion: v2
     appVersion: v1.0.0-61101e8
-    created: "2024-04-01T13:20:38.664714+09:00"
+    created: "2024-04-26T18:02:47.475291+09:00"
     description: In-cluster private image registry for knitfab
     digest: 7d7f81c3d3c4f352aac0d6b6abda947a1273a9582eb07f4fa98040fea0520fdb
     keywords:
@@ -54,12 +106,32 @@ entries:
     name: knit-image-registry
     type: application
     urls:
-    - https://raw.githubusercontent.com/opst/knitfab/main/charts/release/v1.0.0/knit-image-registry-v1.0.0.tgz
+    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/release-test/v1.0.3/charts/release/v1.0.0/knit-image-registry-v1.0.0.tgz
     version: v1.0.0
   knit-storage-nfs:
   - apiVersion: v2
+    appVersion: v1.0.3-d5ccc0a
+    created: "2024-04-26T18:02:47.482281+09:00"
+    dependencies:
+    - name: csi-driver-nfs
+      repository: https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
+      version: v4.6.0
+    description: storage classes with nfs provisioner and opt-in in-cluster NFS server
+    digest: ba08254e84f8027222da14af3c647f139f0b65a94896c967b98ecf6ba0f08419
+    keywords:
+    - knitfab
+    - MLOps
+    - Lineage Tracking
+    - Workflow
+    - Tag Based Workflow
+    name: knit-storage-nfs
+    type: application
+    urls:
+    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/release-test/v1.0.3/charts/release/v1.0.3/knit-storage-nfs-v1.0.3.tgz
+    version: v1.0.3
+  - apiVersion: v2
     appVersion: v1.0.0-61101e8
-    created: "2024-04-01T13:20:38.666524+09:00"
+    created: "2024-04-26T18:02:47.477825+09:00"
     dependencies:
     - name: csi-driver-nfs
       repository: https://raw.githubusercontent.com/kubernetes-csi/csi-driver-nfs/master/charts
@@ -75,6 +147,6 @@ entries:
     name: knit-storage-nfs
     type: application
     urls:
-    - https://raw.githubusercontent.com/opst/knitfab/main/charts/release/v1.0.0/knit-storage-nfs-v1.0.0.tgz
+    - https://raw.githubusercontent.com/takaoka-youta-opst/knitfab/release-test/v1.0.3/charts/release/v1.0.0/knit-storage-nfs-v1.0.0.tgz
     version: v1.0.0
-generated: "2024-04-01T13:20:38.661561+09:00"
+generated: "2024-04-26T18:02:47.47023+09:00"
