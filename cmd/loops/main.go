@@ -14,13 +14,15 @@ import (
 	"github.com/opst/knitfab/cmd/loops/hook"
 	"github.com/opst/knitfab/cmd/loops/recurring"
 	knit "github.com/opst/knitfab/pkg"
+	"github.com/opst/knitfab/pkg/api/types/runs"
 	configs "github.com/opst/knitfab/pkg/configs/backend"
 	cfg_hook "github.com/opst/knitfab/pkg/configs/hook"
+	"github.com/opst/knitfab/pkg/configs/watcher"
 	kdb "github.com/opst/knitfab/pkg/db"
 	kpg "github.com/opst/knitfab/pkg/db/postgres"
 	"github.com/opst/knitfab/pkg/kubeutil"
 	"github.com/opst/knitfab/pkg/utils/args"
-	"github.com/opst/knitfab/pkg/utils/filewatch"
+
 	"github.com/opst/knitfab/pkg/utils/try"
 	"github.com/opst/knitfab/pkg/workloads/k8s"
 )
@@ -65,16 +67,6 @@ func main() {
 		return
 	}
 
-	{
-		// watch config & hooks
-		wctx, cancel, err := filewatch.UntilModifyContext(ctx, *pconfig, *phooks)
-		if err != nil {
-			logger.Fatal(err)
-		}
-		defer cancel()
-		ctx = wctx
-	}
-
 	conf := try.To(configs.LoadBackendConfig(*pconfig)).OrFatal(logger)
 	kclientset := kubeutil.ConnectToK8s()
 
@@ -84,9 +76,17 @@ func main() {
 		try.To(kpg.New(ctx, conf.Cluster().Database())).OrFatal(logger),
 	)
 
-	hooks := cfg_hook.Config{}
+	var hooks hook.Hook[runs.Detail] = hook.None[runs.Detail]{}
 	if hookPath := *phooks; hookPath != "" {
-		hooks = try.To(cfg_hook.Load(hookPath)).OrFatal(logger)
+		w := try.To(watcher.NewFileWatcher(*phooks, func(configFile string) (hook.Hook[runs.Detail], error) {
+			cfg, err := cfg_hook.Load(configFile)
+			logger.Printf("loading hook config from %s", configFile)
+			if err != nil {
+				return nil, err
+			}
+			return hook.Build(cfg.Lifecycle), nil
+		})).OrFatal(logger)
+		hooks = hook.Watch(w)
 	}
 
 	logger.Printf(
@@ -99,7 +99,7 @@ func main() {
 		LoopManifest{
 			Type:   loopType.Value(),
 			Policy: recurring.UntilError(policy.Value()),
-			Hooks:  hook.Build(hooks.Lifecycle),
+			Hooks:  hooks,
 		},
 	)
 
